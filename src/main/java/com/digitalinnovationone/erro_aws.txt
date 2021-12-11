@@ -1,0 +1,901 @@
+ 
+09:53:47.122 [main] DEBUG com.amazonaws.AmazonWebServiceClient - Internal logging successfully configured to commons logger: true
+09:53:47.426 [main] DEBUG com.amazonaws.metrics.AwsSdkMetrics - Admin mbean registered under com.amazonaws.management:type=AwsSdkMetrics
+09:53:47.957 [main] DEBUG com.amazonaws.monitoring.CsmConfigurationProviderChain - Unable to load configuration from com.amazonaws.monitoring.EnvironmentVariableCsmConfigurationProvider@4a891c97: Unable to load Client Side Monitoring configurations from environment variables!
+09:53:47.957 [main] DEBUG com.amazonaws.monitoring.CsmConfigurationProviderChain - Unable to load configuration from com.amazonaws.monitoring.SystemPropertyCsmConfigurationProvider@a5bd950: Unable to load Client Side Monitoring configurations from system properties variables!
+09:53:47.957 [java-sdk-http-connection-reaper] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Closing connections idle longer than 60000 MILLISECONDS
+09:53:47.962 [main] DEBUG com.amazonaws.monitoring.CsmConfigurationProviderChain - Unable to load configuration from com.amazonaws.monitoring.ProfileCsmConfigurationProvider@674658f7: The 'default' profile does not define all the required properties!
+09:53:48.136 [main] DEBUG com.amazonaws.auth.AWSCredentialsProviderChain - Unable to load credentials from EnvironmentVariableCredentialsProvider: Unable to load AWS credentials from environment variables (AWS_ACCESS_KEY_ID (or AWS_ACCESS_KEY) and AWS_SECRET_KEY (or AWS_SECRET_ACCESS_KEY))
+09:53:48.137 [main] DEBUG com.amazonaws.auth.AWSCredentialsProviderChain - Loading credentials from SystemPropertiesCredentialsProvider
+09:53:48.147 [main] DEBUG com.amazonaws.request - Sending Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:48.271 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:0/0/500
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125348Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:48.292 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125348Z
+20211203/us-east-2/dynamodb/aws4_request
+2f0a07d03790b43e939957b3b3350e138b52f0d2f60500edfa7347b16404512f"
+09:53:48.317 [main] DEBUG com.amazonaws.auth.AWS4Signer - Generating a new signing key as the signing key not available in the cache for the date 1638489600000
+09:53:48.381 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:48.401 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:48.405 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.453 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:48.457 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:48.498 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:48.499 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:48.499 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:48.503 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:48.504 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.504 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.504 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:48.513 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:48.515 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Shutdown connection
+09:53:48.516 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:48.516 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.521 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:48.521 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 11ms, attempt number: 0
+09:53:48.534 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:1/11/495
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125348Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:48.534 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125348Z
+20211203/us-east-2/dynamodb/aws4_request
+229167e12a65586e944cf9500a3ff588e1bf2824fe2f6c387c864bf3ae23ca79"
+09:53:48.536 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:48.537 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:48.537 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.539 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:48.540 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:48.541 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:48.541 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:48.542 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:48.545 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:48.545 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.546 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.546 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:48.553 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:48.557 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: Shutdown connection
+09:53:48.558 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:48.558 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.558 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:48.559 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 20ms, attempt number: 1
+09:53:48.581 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:2/20/490
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125348Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:48.583 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125348Z
+20211203/us-east-2/dynamodb/aws4_request
+821154f3aa9ac2d3722a1597efaef4649c39092b7a14597bc102316613b7b131"
+09:53:48.585 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:48.585 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:48.585 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.586 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:48.586 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:48.586 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:48.586 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:48.586 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:48.587 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:48.587 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.588 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.588 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:48.592 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:48.605 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: Shutdown connection
+09:53:48.608 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:48.608 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.608 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:48.609 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 20ms, attempt number: 2
+09:53:48.630 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:3/20/485
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125348Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:48.632 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125348Z
+20211203/us-east-2/dynamodb/aws4_request
+ae90f32b3c2da9d7ccf815d63dd3aff9d265331b012f2635632d448f2a916f87"
+09:53:48.634 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:48.635 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:48.635 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.636 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:48.636 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:48.636 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:48.636 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:48.636 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:48.637 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:48.638 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.639 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.639 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:48.641 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:48.644 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Shutdown connection
+09:53:48.644 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:48.644 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.644 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:48.645 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 99ms, attempt number: 3
+09:53:48.745 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:4/99/480
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125348Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:48.747 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125348Z
+20211203/us-east-2/dynamodb/aws4_request
+95c6535368dda3c0ba42bed72f81cf51558e1f4e1e6c88df7c10f27fea415711"
+09:53:48.750 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:48.750 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:48.750 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.751 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 4][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:48.752 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:48.752 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:48.752 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:48.752 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:48.753 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:48.753 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.753 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:48.753 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:48.754 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:48.755 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-4: Shutdown connection
+09:53:48.755 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:48.755 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 4][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:48.758 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:48.758 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 287ms, attempt number: 4
+09:53:49.046 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:5/287/475
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125349Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:49.047 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125349Z
+20211203/us-east-2/dynamodb/aws4_request
+8784e7fb2baaaf394219805354f14f3294fc50654ca4dba31b1b000f2ceb7829"
+09:53:49.048 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:49.048 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:49.049 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:49.049 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 5][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:49.049 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:49.049 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:49.049 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:49.050 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:49.050 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:49.050 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:49.050 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:49.050 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:49.052 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:49.053 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-5: Shutdown connection
+09:53:49.053 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:49.053 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 5][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:49.053 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:49.053 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 357ms, attempt number: 5
+09:53:49.411 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:6/357/470
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125349Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:49.412 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125349Z
+20211203/us-east-2/dynamodb/aws4_request
+d63f1fe79a8021ea4245198490c446058a94a900562e7dd8eee288f9ca0d1bc4"
+09:53:49.413 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:49.413 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:49.413 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:49.413 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 6][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:49.413 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:49.414 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:49.414 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:49.414 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:49.414 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:49.415 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:49.415 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:49.415 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:49.416 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:49.416 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-6: Shutdown connection
+09:53:49.416 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:49.417 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 6][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:49.417 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:49.417 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 694ms, attempt number: 6
+09:53:50.112 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:7/694/465
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125350Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:50.112 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125350Z
+20211203/us-east-2/dynamodb/aws4_request
+30af0332eef3f4dec55252c7d78c551c3643777c50f5fb304f144f230f67807d"
+09:53:50.114 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:50.114 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:50.115 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:50.115 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 7][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:50.115 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:50.115 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:50.115 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:50.115 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:50.116 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:50.117 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:50.117 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:50.117 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:50.118 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:50.120 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-7: Shutdown connection
+09:53:50.120 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:50.121 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 7][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:50.121 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:50.121 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 2639ms, attempt number: 7
+09:53:52.761 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:8/2639/460
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125352Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:52.761 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125352Z
+20211203/us-east-2/dynamodb/aws4_request
+beae1a1951ebcead3731cd5123e8267625a6f8d75f2a593fe2ee87a0b56f9067"
+09:53:52.762 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:52.762 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:52.762 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:52.763 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 8][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:52.763 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:52.763 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:52.763 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:52.764 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:52.764 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:52.764 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:52.764 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:52.764 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:52.765 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:52.766 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-8: Shutdown connection
+09:53:52.769 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:52.769 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 8][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:52.770 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:52.770 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 364ms, attempt number: 8
+09:53:53.135 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:9/364/455
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125353Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:53.135 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125353Z
+20211203/us-east-2/dynamodb/aws4_request
+190dde38339deff65f66f203f30fada993fa5c5c7f6e0e2b63d34b830c305fe9"
+09:53:53.139 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:53.140 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:53.141 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:53.142 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 9][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:53.143 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:53.143 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:53.144 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:53.144 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:53.144 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:53.145 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:53.146 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:53.146 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:53.147 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:53.151 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-9: Shutdown connection
+09:53:53.151 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:53.151 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 9][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:53.151 [main] DEBUG com.amazonaws.request - Retrying Request: POST https://localhost:8000 / Headers: (User-Agent: aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation, amz-sdk-invocation-id: 3a1461e3-624e-3d5b-cf9d-79e6a04a2a14, Content-Length: 215, X-Amz-Target: DynamoDB_20120810.CreateTable, Content-Type: application/x-amz-json-1.0, ) 
+09:53:53.152 [main] DEBUG com.amazonaws.http.AmazonHttpClient - Retriable error detected, will retry in 120ms, attempt number: 9
+09:53:53.273 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 Canonical Request: '"POST
+/
+
+amz-sdk-invocation-id:3a1461e3-624e-3d5b-cf9d-79e6a04a2a14
+amz-sdk-retry:10/120/450
+content-length:215
+content-type:application/x-amz-json-1.0
+host:localhost:8000
+user-agent:aws-sdk-java/1.11.615 Linux/5.10.79-1-MANJARO OpenJDK_64-Bit_Server_VM/11.0.13+8 java/11.0.13 vendor/Oracle_Corporation
+x-amz-date:20211203T125353Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+amz-sdk-invocation-id;amz-sdk-retry;content-length;content-type;host;user-agent;x-amz-date;x-amz-target
+abf4e1169aad656570da72078ad48155d7d464ffa5594298abea66e021abdf63"
+09:53:53.274 [main] DEBUG com.amazonaws.auth.AWS4Signer - AWS4 String to Sign: '"AWS4-HMAC-SHA256
+20211203T125353Z
+20211203/us-east-2/dynamodb/aws4_request
+43c46a1dfb78a26cc78411fc2a574e444bf575c6544110631b40b890aefaa6a2"
+09:53:53.274 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+09:53:53.274 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+09:53:53.275 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+09:53:53.275 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 10][route: {s}->https://localhost:8000][total available: 0; route allocated: 1 of 50; total allocated: 1 of 50]
+09:53:53.275 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://localhost:8000
+09:53:53.275 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8000
+09:53:53.275 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/127.0.0.1:8000
+09:53:53.275 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/127.0.0.1:8000 with timeout 10000
+09:53:53.276 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connect to localhost/127.0.0.1:8000 timed out. Connection will be retried using another IP address
+09:53:53.276 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:53.276 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - connecting to localhost/0:0:0:0:0:0:0:1:8000
+09:53:53.276 [main] DEBUG com.amazonaws.http.conn.ssl.SdkTLSSocketFactory - Connecting socket to localhost/0:0:0:0:0:0:0:1:8000 with timeout 10000
+09:53:53.277 [main] DEBUG com.amazonaws.http.conn.ClientConnectionManagerFactory - 
+java.lang.reflect.InvocationTargetException: null
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+        at com.amazonaws.http.conn.$Proxy2.connect(Unknown Source)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+        at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1297)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1113)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:770)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:744)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:726)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:686)
+        at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:668)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:532)
+        at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:512)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:3768)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:3737)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeCreateTable(AmazonDynamoDBClient.java:1020)
+        at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.createTable(AmazonDynamoDBClient.java:988)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:96)
+        at com.amazonaws.services.dynamodbv2.document.DynamoDB.createTable(DynamoDB.java:108)
+        at com.digitalinnovationone.heroesapi.config.HeroesTable.main(HeroesTable.java:39)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        ... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+        at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.base/java.net.Socket.connect(Socket.java:609)
+        at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+        at com.amazonaws.http.conn.ssl.SdkTLSSocketFactory.connectSocket(SdkTLSSocketFactory.java:142)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 30 common frames omitted
+09:53:53.277 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-10: Shutdown connection
+09:53:53.278 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+09:53:53.278 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 10][route: {s}->https://localhost:8000][total available: 0; route allocated: 0 of 50; total allocated: 0 of 50]
+Unable to execute HTTP request: Connect to localhost:8000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
